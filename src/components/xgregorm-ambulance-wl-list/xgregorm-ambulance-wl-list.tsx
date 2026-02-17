@@ -1,7 +1,4 @@
 import { Component, Host, h } from '@stencil/core';
-import '@material/web/list/list'
-import '@material/web/list/list-item'
-import '@material/web/icon/icon'
 
 @Component({
   tag: 'xgregorm-ambulance-wl-list',
@@ -48,7 +45,7 @@ export class XgregormAmbulanceWlList {
             <md-list-item>
               <div slot="headline">{patient.name}</div>
               <div slot="supporting-text">{"Predpokladaný vstup: " + patient.estimatedStart?.toLocaleString()}</div>
-                <md-icon slot="start">person</md-icon>
+              <md-icon slot="start">person</md-icon>
             </md-list-item>
           )}
         </md-list>
