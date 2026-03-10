@@ -12,8 +12,9 @@ declare global {
 
 export class XgregormAmbulanceWlApp {
   @State() private relativePath = "";
-
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -56,7 +57,7 @@ export class XgregormAmbulanceWlApp {
       ? <ambulance-wl-editor entry-id={entryId}
           oneditor-closed={ () => navigate("./list")} >
         </ambulance-wl-editor>
-      : <xgregorm-ambulance-wl-list
+      : <xgregorm-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
         onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
       </xgregorm-ambulance-wl-list>
       }

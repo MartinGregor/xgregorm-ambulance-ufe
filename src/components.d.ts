@@ -24,12 +24,16 @@ export namespace Components {
         "middle": string;
     }
     interface XgregormAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
         "basePath": string;
     }
     interface XgregormAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface AmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -114,12 +118,16 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface XgregormAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
         "basePath"?: string;
     }
     interface XgregormAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: XgregormAmbulanceWlListCustomEvent<string>) => void;
     }
 
@@ -133,13 +141,19 @@ declare namespace LocalJSX {
     }
     interface XgregormAmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
+    }
+    interface XgregormAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
         "ambulance-wl-editor": Omit<AmbulanceWlEditor, keyof AmbulanceWlEditorAttributes> & { [K in keyof AmbulanceWlEditor & keyof AmbulanceWlEditorAttributes]?: AmbulanceWlEditor[K] } & { [K in keyof AmbulanceWlEditor & keyof AmbulanceWlEditorAttributes as `attr:${K}`]?: AmbulanceWlEditorAttributes[K] } & { [K in keyof AmbulanceWlEditor & keyof AmbulanceWlEditorAttributes as `prop:${K}`]?: AmbulanceWlEditor[K] };
         "my-component": Omit<MyComponent, keyof MyComponentAttributes> & { [K in keyof MyComponent & keyof MyComponentAttributes]?: MyComponent[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `attr:${K}`]?: MyComponentAttributes[K] } & { [K in keyof MyComponent & keyof MyComponentAttributes as `prop:${K}`]?: MyComponent[K] };
         "xgregorm-ambulance-wl-app": Omit<XgregormAmbulanceWlApp, keyof XgregormAmbulanceWlAppAttributes> & { [K in keyof XgregormAmbulanceWlApp & keyof XgregormAmbulanceWlAppAttributes]?: XgregormAmbulanceWlApp[K] } & { [K in keyof XgregormAmbulanceWlApp & keyof XgregormAmbulanceWlAppAttributes as `attr:${K}`]?: XgregormAmbulanceWlAppAttributes[K] } & { [K in keyof XgregormAmbulanceWlApp & keyof XgregormAmbulanceWlAppAttributes as `prop:${K}`]?: XgregormAmbulanceWlApp[K] };
-        "xgregorm-ambulance-wl-list": XgregormAmbulanceWlList;
+        "xgregorm-ambulance-wl-list": Omit<XgregormAmbulanceWlList, keyof XgregormAmbulanceWlListAttributes> & { [K in keyof XgregormAmbulanceWlList & keyof XgregormAmbulanceWlListAttributes]?: XgregormAmbulanceWlList[K] } & { [K in keyof XgregormAmbulanceWlList & keyof XgregormAmbulanceWlListAttributes as `attr:${K}`]?: XgregormAmbulanceWlListAttributes[K] } & { [K in keyof XgregormAmbulanceWlList & keyof XgregormAmbulanceWlListAttributes as `prop:${K}`]?: XgregormAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
