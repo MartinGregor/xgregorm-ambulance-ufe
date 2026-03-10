@@ -1,17 +1,17 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { XgregormAmbulanceWlApp } from '../xgregorm-ambulance-wl-app';
 
-describe('<pfx>-ambulance-wl-app', () => {
+describe('xgregorm-ambulance-wl-app', () => {
 
   it('renders editor', async () => {
     const page = await newSpecPage({
       url: `http://localhost/entry/@new`,
       components: [XgregormAmbulanceWlApp],
-      html: `<<pfx>-ambulance-wl-app base-path="/"></<pfx>-ambulance-wl-app>`,
+      html: `<xgregorm-ambulance-wl-app base-path="/"></xgregorm-ambulance-wl-app>`,
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual ("<pfx>-ambulance-wl-editor");
+    expect(child.tagName.toLocaleLowerCase()).toEqual ("xgregorm-ambulance-wl-editor");
 
   });
 
@@ -19,10 +19,10 @@ describe('<pfx>-ambulance-wl-app', () => {
     const page = await newSpecPage({
       url: `http://localhost/ambulance-wl/`,
       components: [XgregormAmbulanceWlApp],
-      html: `<xgregorm-ambulance-wl-app base-path="/ambulance-wl/"></<pfx>-ambulance-wl-app>`,
+      html: `<xgregorm-ambulance-wl-app base-path="/ambulance-wl/"></xgregorm-ambulance-wl-app>`,
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual("<pfx>-ambulance-wl-list");
+    expect(child.tagName.toLocaleLowerCase()).toEqual("xgregorm-ambulance-wl-list");
   });
 });
