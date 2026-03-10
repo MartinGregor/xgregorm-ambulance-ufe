@@ -11,7 +11,7 @@ describe('xgregorm-ambulance-wl-app', () => {
     });
     page.win.navigation = new EventTarget()
     const child = await page.root.shadowRoot.firstElementChild;
-    expect(child.tagName.toLocaleLowerCase()).toEqual ("xgregorm-ambulance-wl-editor");
+    expect(child.tagName.toLocaleLowerCase()).toEqual ("ambulance-wl-editor");
 
   });
 
