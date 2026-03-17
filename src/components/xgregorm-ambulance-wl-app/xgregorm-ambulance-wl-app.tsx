@@ -37,6 +37,7 @@ export class XgregormAmbulanceWlApp {
   }
 
   render() {
+    console.debug("xgregorm-ambulance-wl-app.render() - path: %s", this.relativePath);
   let element = "list"
   let entryId = "@new"
 
