@@ -54,11 +54,16 @@ export class XgregormAmbulanceWlApp {
   return (
     <Host>
       { element === "editor"
-      ? <ambulance-wl-editor entry-id={entryId}
+      ? <ambulance-wl-editor
+          entry-id={entryId}
+          ambulance-id={this.ambulanceId}
+          api-base={this.apiBase}
           oneditor-closed={ () => navigate("./list")} >
         </ambulance-wl-editor>
-      : <xgregorm-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
-        onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
+      : <xgregorm-ambulance-wl-list
+          ambulance-id={this.ambulanceId}
+          api-base={this.apiBase}
+          onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
       </xgregorm-ambulance-wl-list>
       }
 
